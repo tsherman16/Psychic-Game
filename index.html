@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Psychis-Game</title>
+    <link rel="stylesheet" href="assets/javascript/game.js">
+    <title>Psychic-Game</title>
 </head>
+
 <body>
 
-    <h1 class="gameTitle">The Psychic Game</h1>
-
-    <div>Guess what letter I'm thinking of</div>
+    <div class="container">
+        <div class="row">
+            <h1 class="gameTitle">The Psychic Game</h1>
+            <div class="heading">Guess what letter I'm thinking of!</div>
+            <hr>
+            <br>
+            <p id="win-text">Wins: 0</p>
+            <p id="loss-text">Losses: 0</p>
+            <p id="guessleft-text">Guesses Left: 9</p>
+            <p>Your guesses so far: <span id=guesses-text></span></p>
+            <script src="assets/javascript/game.js"></script>
+        </div>
+    </div>
 </body>
+
 </html>
