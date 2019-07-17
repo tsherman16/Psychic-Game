@@ -49,7 +49,6 @@ document.onkeyup = function (event) {
             "Guesses Left: " + guessesLeft;
         document.getElementById("guesses-text").innerHTML = guessAttempts;
     } else if (userGuess !== computerGuess) {
-        losses++;
         guessesLeft--;
         guessAttempts.push(userGuess);
         console.log("Wins: " + wins);
@@ -60,5 +59,10 @@ document.onkeyup = function (event) {
         document.getElementById("guessleft-text").innerHTML =
             "Guesses Left: " + guessesLeft;
         document.getElementById("guesses-text").innerHTML = guessAttempts;
+    }
+    if (guessesLeft === 0) {
+        losses++;
+        guessesLeft = 9;
+        guessAttempts = [];
     }
 };
