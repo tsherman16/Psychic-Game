@@ -33,16 +33,17 @@ var guessAttempts = [];
 var computerGuess =
     computerChoices[Math.floor(Math.random() * computerChoices.length)];
 document.onkeyup = function (event) {
+    if(guessAttempts.indexOf(event.key) === -1){
+       guessAttempts.push(event.key);
+      }
     var userGuess = event.key;
     console.log(userGuess);
     console.log(computerGuess);
+    
     if (userGuess === computerGuess) {
         wins++;
         guessesLeft = 9;
         guessAttempts = [];
-        console.log("Wins: " + wins);
-        console.log("Guesses-Left: " + guessesLeft);
-        console.log(guessAttempts);
         document.getElementById("win-text").innerHTML = "Wins: " + wins;
         document.getElementById("loss-text").innerHTML = "Losses: " + losses;
         document.getElementById("guessleft-text").innerHTML =
@@ -50,10 +51,7 @@ document.onkeyup = function (event) {
         document.getElementById("guesses-text").innerHTML = guessAttempts;
     } else if (userGuess !== computerGuess) {
         guessesLeft--;
-        guessAttempts.push(userGuess);
-        console.log("Wins: " + wins);
-        console.log("Guesses-Left: " + guessesLeft);
-        console.log(guessAttempts);
+        //guessAttempts.push(userGuess);
         document.getElementById("win-text").innerHTML = "Wins: " + wins;
         document.getElementById("loss-text").innerHTML = "Losses: " + losses;
         document.getElementById("guessleft-text").innerHTML =
